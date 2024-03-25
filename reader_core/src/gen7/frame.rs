@@ -3,7 +3,7 @@ use super::{
     reader::Gen7Reader,
 };
 use crate::{
-    pnp,
+    pnp::{self, key_addr},
     rng::{RngWrapper, Sfmt},
     utils::{
         menu::{Menu, MenuOption, MenuOptionValue},
@@ -92,6 +92,8 @@ fn run_frame(reader: Gen7Reader) {
     let is_locked = state.main_menu.update_lock();
     state.view = state.main_menu.next_view(Gen7View::MainMenu, state.view);
     draw_header(Gen7View::MainMenu, state.view, is_locked);
+
+    pnp::println!("Key addr {:x}", pnp::key_addr());
 
     match state.view {
         Gen7View::Rng => draw_rng(&reader, &state.sfmt),

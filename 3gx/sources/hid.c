@@ -27,3 +27,8 @@ u32 get_previous_keys()
 {
   return g_previous_keys;
 }
+
+u32 get_key_addr()
+{
+  return g_key_addr;
+}
