@@ -34,7 +34,7 @@ void handle_freeze(bool isTopScreen)
             break;
         }
 
-        if (just_pressed == KEY_A || just_pressed == KEY_START || just_pressed == KEY_R)
+        if (just_pressed == KEY_START || just_pressed == KEY_R)
         {
             is_paused = false;
             break;

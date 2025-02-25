@@ -46,7 +46,7 @@ unsafe fn get_state() -> &'static mut PersistedState {
     static mut STATE: Lazy<PersistedState> = Lazy::new(|| PersistedState {
         frame: 0,
         show_view: ShowView::default(),
-        view: CrystalView::MainMenu,
+        view: CrystalView::NonCfw,
         party_menu: SubMenu::default(),
         main_menu: Menu::new([
             MenuOption::new(CrystalView::Rng),
